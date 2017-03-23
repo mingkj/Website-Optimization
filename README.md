@@ -25,7 +25,7 @@
 
 ### 如何运行
 
-本地用浏览器打开 dist/index.html 文件
+本地用浏览器打开 dist/index.html 文件。或点击 [这里](https://mingkj.github.io/Website-Optimization/dist/)
 
 ### gulp 工具的运行
 
