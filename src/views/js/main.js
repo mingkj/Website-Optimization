@@ -403,13 +403,13 @@ var resizePizzas = function (size) {
     function changeSliderLabel(size) {
         switch (size) {
             case "1":
-                document.querySelector("#pizzaSize").innerHTML = "Small";
+                document.getElementById("pizzaSize").innerHTML = "Small";
                 return;
             case "2":
-                document.querySelector("#pizzaSize").innerHTML = "Medium";
+                document.getElementById("pizzaSize").innerHTML = "Medium";
                 return;
             case "3":
-                document.querySelector("#pizzaSize").innerHTML = "Large";
+                document.getElementById("pizzaSize").innerHTML = "Large";
                 return;
             default:
                 console.log("bug in changeSliderLabel");
@@ -435,7 +435,7 @@ var resizePizzas = function (size) {
             default:
                 console.log("bug in sizeSwitcher");
         }
-        var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
+        var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
         for (var i = 0; i < randomPizzas.length; i++) {
 
             randomPizzas[i].style.width = newWidth + "%";
@@ -496,7 +496,7 @@ function updatePositions() {
 
     }
 
-    var items = document.querySelectorAll('.mover');
+    var items = document.getElementsByClassName('mover');
     for (var i = 0; i < items.length; i++) {
         items[i].style.left = items[i].basicLeft + 100 * phases[i % 5] + 'px';
     }
@@ -522,6 +522,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 根据窗口高度计算需要的 elem 的数量
     var elemNum = (Math.floor(window.innerHeight / s) + 1) * cols;
 
+    var movingPizzas1 = document.getElementById("movingPizzas1");
     for (var i = 0; i < elemNum; i++) {
         var elem = document.createElement('img');
         elem.className = 'mover';
@@ -530,7 +531,7 @@ document.addEventListener('DOMContentLoaded', function () {
         elem.style.width = "73.333px";
         elem.basicLeft = (i % cols) * s;
         elem.style.top = (Math.floor(i / cols) * s) + 'px';
-        document.querySelector("#movingPizzas1").appendChild(elem);
+        movingPizzas1.appendChild(elem);
     }
     updatePositions();
 });
